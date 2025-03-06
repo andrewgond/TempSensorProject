@@ -39,10 +39,15 @@ void loop() {
   delay(100);
 
   if ( check(temps, 10)){
+
     for (int b = 0 ; b < 10 ; b++){
       Serial.print(temps[b]);
-      Serial.print(",");
+      Serial.print((","));
+      temp =  Temp_Sensor.getTemperature();
+      temps[b] = temp;
+ 
     }
+    delay(5000);
   }
   else {
 
